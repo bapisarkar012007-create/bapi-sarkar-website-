@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BAPI SARKAR - Official Website</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+            transition: 0.4s;
+            overflow-x: hidden;
+        }
+
+        /* RED TOP LINE */
+
+        body::before {
+            content: "";
+            display: block;
+            height: 5px;
+            background: red;
+            box-shadow: 0 0 20px red;
+        }
+
+
+        /* HEADER */
+
+        header {
+            padding: 35px 5%;
+            border-bottom: 1px solid #222;
+            text-align: left;
+        }
+
+
+        /* BAPI SARKAR */
+
+        .logo {
+            text-align: center;
+            width: 100%;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo h1 a {
+            color: red;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .logo h1 a:hover {
+            text-shadow:
+                0 0 10px blue,
+                0 0 25px white,
+                0 0 50px red;
+        }
+
+        .logo p {
+            text-align: left;
+            width: 100%;
+        }
+
+        .logo p {
+            letter-spacing: 6px;
+            color: #ddd;
+            margin-top: 12px;
+        }
+
+
+        /* SOCIAL ICONS */
+
+        .social {
+            display: flex;
+            justify-content: right;
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .social a {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 27px;
+
+            color: white;
+            text-decoration: none;
+
+            border: 2px solid white;
+
+            transition: 0.3s;
+        }
+
+        .social a:hover {
+            transform: translateY(-8px) scale(1.1);
+
+            border-color: red;
+
+            box-shadow: 0 0 20px red;
+        }
+
+
+        /* MENU */
+
+        .menu {
+            width: 100%;
+            text-align: right;
+            margin-top: 30px;
+        }
+
+        .menu button,
+        .dark-button {
+
+            background: transparent;
+
+            color: white;
+
+            border: 2px solid #aaa;
+
+            padding: 12px 25px;
+
+            margin: 5px;
+
+            border-radius: 25px;
+
+            cursor: pointer;
+
+            font-size: 15px;
+
+            transition: 0.3s;
+        }
+
+        .menu button:hover,
+        .dark-button:hover {
+
+            border-color: red;
+
+            color: red;
+
+            box-shadow: 0 0 15px red;
+        }
+
+
+        /* MUSIC BUTTON */
+
+        #musicButton {
+            background: transparent;
+            color: white;
+            border: 2px solid #aaa;
+            padding: 12px 25px;
+            margin: 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        #musicButton:hover {
+            border-color: red;
+            color: red;
+            box-shadow: 0 0 15px red;
+        }
+
+
+        /* MAIN CONTENT */
+
+        .content {
+
+            text-align: center;
+
+            padding: 90px 20px;
+
+            min-height: 480px;
+
+            position: relative;
+        }
+
+
+        .content::before,
+        .content::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            border-radius: 50%;
+
+            background: red;
+
+            filter: blur(100px);
+
+            opacity: 0.12;
+
+            z-index: -1;
+        }
+
+        .content::before {
+
+            left: -100px;
+            top: 80px;
+        }
+
+        .content::after {
+
+            right: -100px;
+            top: 80px;
+        }
+
+
+        .content h2 {
+
+            font-size: 38px;
+
+            letter-spacing: 6px;
+        }
+
+
+        .content h3 {
+
+            color: red;
+
+            font-size: 50px;
+
+            text-shadow: 0 0 20px red;
+        }
+
+
+        .content p {
+
+            color: #ccc;
+
+            font-size: 18px;
+
+            letter-spacing: 2px;
+
+            line-height: 1.8;
+        }
+
+
+        /* ABOUT ME BOX */
+
+        .about-box {
+
+            max-width: 800px;
+
+            margin: 40px auto;
+
+            padding: 30px;
+
+            border: 1px solid #333;
+
+            border-radius: 20px;
+
+            background: rgba(255, 255, 255, 0.03);
+
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.15);
+        }
+
+        .about-box p {
+
+            color: #ccc;
+
+            font-size: 17px;
+
+            letter-spacing: 1px;
+
+            line-height: 1.9;
+        }
+
+        .about-box strong {
+
+            color: red;
+        }
+
+
+        /* CONTACT ICONS */
+
+        .contact-box {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 100px;
+
+            margin-top: 60px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .contact-item {
+
+            text-align: center;
+        }
+
+
+        .contact-icon {
+
+            width: 80px;
+
+            height: 80px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            margin: auto;
+
+            font-size: 38px;
+
+            color: white;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+
+        .whatsapp {
+
+            border: 3px solid #00ff66;
+
+            box-shadow: 0 0 20px #00ff66;
+        }
+
+
+        .email {
+
+            border: 3px solid #00aaff;
+
+            box-shadow: 0 0 20px #00aaff;
+        }
+
+
+        .contact-icon:hover {
+
+            transform: scale(1.15);
+        }
+
+
+        .contact-item h3 {
+
+            margin: 15px 0 5px;
+
+            color: white;
+
+            font-size: 22px;
+        }
+
+
+        .contact-item p {
+
+            color: #aaa;
+
+            margin: 0;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+
+            text-align: center;
+
+            padding: 30px;
+
+            border-top: 1px solid #222;
+
+            color: #aaa;
+        }
+
+        footer span {
+
+            color: red;
+        }
+
+
+        /* LIGHT MODE */
+
+        body.light {
+
+            background: white;
+
+            color: black;
+        }
+
+
+        body.light header {
+
+            border-bottom: 1px solid #ddd;
+        }
+
+
+        body.light .menu button,
+        body.light .dark-button,
+        body.light #musicButton {
+
+            color: black;
+
+            border-color: black;
+        }
+
+
+        body.light .social a {
+
+            color: black;
+
+            border-color: black;
+        }
+
+
+        body.light .content p {
+
+            color: #444;
+        }
+
+
+        body.light .about-box {
+
+            background: #f5f5f5;
+
+            border-color: #ddd;
+        }
+
+
+        body.light .about-box p {
+
+            color: #333;
+        }
+
+
+        body.light .contact-item h3 {
+
+            color: black;
+        }
+
+
+        body.light footer {
+
+            border-color: #ddd;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            .logo h1 {
+
+                font-size: 34px;
+            }
+
+            .logo p {
+
+                font-size: 10px;
+
+                letter-spacing: 3px;
+            }
+
+            .social a {
+
+                width: 48px;
+
+                height: 48px;
+
+                font-size: 23px;
+            }
+
+            .content {
+
+                padding-top: 60px;
+            }
+
+            .content h2 {
+
+                font-size: 24px;
+
+                letter-spacing: 3px;
+            }
+
+            .content h3 {
+
+                font-size: 38px;
+            }
+
+            .contact-box {
+
+                gap: 50px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <!-- BAPI SARKAR -->
+
+        <div class="logo">
+
+            <h1>
+
+                <a href="https://sites.google.com/view/bapisarkar/home"
+                   target="_blank">
+
+                    BAPI SARKAR
+
+                </a>
+
+            </h1>
+
+
+            <p>
+
+                WELCOME TO MY OFFICIAL WEBSITE
+
+            </p>
+
+        </div>
+
+
+        <!-- SOCIAL MEDIA -->
+
+        <div class="social">
+
+            <a href="https://www.facebook.com/bikash6297.bs"
+               target="_blank"
+               title="Facebook">
+
+                f
+
+            </a>
+
+
+            <a href="https://youtube.com/@bsremixmaheshpur"
+               target="_blank"
+               title="YouTube">
+
+                ▶
+
+            </a>
+
+
+            <a href="https://www.instagram.com/imbapisarkar"
+               target="_blank"
+               title="Instagram">
+
+                ◎
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- MENU -->
+
+    <div class="menu">
+
+        <button onclick="showHome()">
+
+            HOME
+
+        </button>
+
+
+        <button onclick="showAbout()">
+
+            ABOUT US
+
+        </button>
+
+
+        <button onclick="showContact()">
+
+            CONTACT US
+
+        </button>
+
+
+        <!-- MUSIC BUTTON -->
+
+        <button onclick="toggleMusic()" id="musicButton">
+
+            🎵 Music OFF
+
+        </button>
+
+
+        <!-- DARK MODE BUTTON -->
+
+        <button class="dark-button"
+                onclick="toggleDarkMode()"
+                id="darkButton">
+
+            ☀️ Light Mode
+
+        </button>
+
+    </div>
+
+
+    <!-- MAIN CONTENT -->
+
+    <div class="content" id="content">
+
+        <h2>
+
+            WELCOME TO MY WEBSITE
+
+        </h2>
+
+
+        <p>
+
+            Dream • Create • Achieve
+
+        </p>
+
+
+        <!-- CONTACT -->
+
+        <div class="contact-box">
+
+
+            <!-- WHATSAPP -->
+
+            <div class="contact-item">
+
+                <a class="contact-icon whatsapp"
+                   href="https://wa.me/916297594079"
+                   target="_blank"
+                   title="WhatsApp">
+
+                    ☎
+
+                </a>
+
+
+                <h3>
+
+                    WhatsApp
+
+                </h3>
+
+
+                <p>
+
+                    Chat with me
+
+                </p>
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="contact-item">
+
+                <a class="contact-icon email"
+                   href="mailto:bapisarkar012007@gmail.com"
+                   title="Email">
+
+                    ✉
+
+                </a>
+
+
+                <h3>
+
+                    Email
+
+                </h3>
+
+
+                <p>
+
+                    Send me a mail
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <span>♥</span>
+
+        Thank you for visiting
+
+    </footer>
+
+
+    <!-- BACKGROUND MUSIC -->
+
+    <audio id="bgMusic" loop>
+
+        <source src="music.mp3" type="audio/mpeg">
+
+    </audio>
+
+<button onclick="document.getElementById('bgMusic').play()">▶ Play Music</button>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+
+        /* HOME */
+
+        function showHome() {
+
+            document.getElementById("content").innerHTML = `
+
+                <h2>
+
+                    WELCOME TO MY WEBSITE
+
+                </h2>
+
+                <p>
+
+                    Dream • Create • Achieve
+
+                </p>
+
+                <div class="contact-box">
+
+                    <div class="contact-item">
+
+                        <a class="contact-icon whatsapp"
+                           href="https://wa.me/916297594079"
+                           target="_blank"
+                           title="WhatsApp">
+
+                            ☎
+
+                        </a>
+
+                        <h3>
+
+                            WhatsApp
+
+                        </h3>
+
+                        <p>
+
+                            Chat with me
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <a class="contact-icon email"
+                           href="mailto:bapisarkar012007@gmail.com"
+                           title="Email">
+
+                            ✉
+
+                        </a>
+
+                        <h3>
+
+                            Email
+
+                        </h3>
+
+                        <p>
+
+                            Send me a mail
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+
+        /* ABOUT */
+
+        function showAbout() {
+
+            document.getElementById("content").innerHTML = `
+
+                <h2>
+
+                    ABOUT ME
+
+                </h2>
+
+                <div class="about-box">
+
+                    <p>
+
+                        Hello! I’m <strong>BAPI SARKAR</strong>.
+
+                    </p>
+
+                    <p>
+
+                        Welcome to my official website.
+                        This is my personal space where I share
+                        my interests, creativity, projects and
+                        the things I enjoy learning and creating.
+
+                    </p>
+
+                    <p>
+
+                        I am interested in
+                        <strong>technology, website design,
+                        music and creative work</strong>.
+                        I enjoy learning new things and
+                        improving my skills step by step.
+
+                    </p>
+
+                    <p>
+
+                        I created this website while learning
+                        <strong>HTML, CSS and JavaScript</strong>.
+                        My goal is to keep learning,
+                        keep creating and turn my ideas
+                        into something useful and beautiful.
+
+                    </p>
+
+                    <p>
+
+                        Thank you for visiting my website
+                        and being a part of my journey. ❤️
+
+                    </p>
+
+                    <p>
+
+                        <strong>Dream • Create • Achieve</strong>
+
+                    </p>
+
+                </div>
+
+            `;
+
+        }
+
+
+        /* CONTACT */
+
+        function showContact() {
+
+            document.getElementById("content").innerHTML = `
+
+                <h2>
+
+                    CONTACT ME
+
+                </h2>
+
+                <p>
+
+                    Feel free to get in touch with me.
+
+                </p>
+
+                <div class="contact-box">
+
+                    <div class="contact-item">
+
+                        <a class="contact-icon whatsapp"
+                           href="https://wa.me/916297594079"
+                           target="_blank"
+                           title="WhatsApp">
+
+                            ☎
+
+                        </a>
+
+                        <h3>
+
+                            WhatsApp
+
+                        </h3>
+
+                        <p>
+
+                            Chat with me
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <a class="contact-icon email"
+                           href="mailto:bapisarkar012007@gmail.com"
+                           title="Email">
+
+                            ✉
+
+                        </a>
+
+                        <h3>
+
+                            Email
+
+                        </h3>
+
+                        <p>
+
+                            Send me a mail
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+
+        /* DARK / LIGHT MODE */
+
+        function toggleDarkMode() {
+
+            document.body.classList.toggle("light");
+
+            const button =
+                document.getElementById("darkButton");
+
+
+            if (document.body.classList.contains("light")) {
+
+                button.innerHTML = "🌙 Dark Mode";
+
+            } else {
+
+                button.innerHTML = "☀️ Light Mode";
+
+            }
+
+        }
+
+
+        /* BACKGROUND MUSIC */
+
+        function toggleMusic() {
+
+            const music =
+                document.getElementById("bgMusic");
+
+            const button =
+                document.getElementById("musicButton");
+
+
+            if (music.paused) {
+
+                music.play();
+
+                button.innerHTML = "🎵 Music ON";
+
+            } else {
+
+                music.pause();
+
+                button.innerHTML = "🔇 Music OFF";
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
