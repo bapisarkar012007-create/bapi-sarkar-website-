@@ -112,6 +112,24 @@
 
             box-shadow: 0 0 20px red;
         }
+.exam-menu {
+    text-align: left !important;
+    margin-top: 5px !important;
+}
+
+.exam-sub-menu {
+    text-align: left !important;
+    margin-top: 15px !important;
+}
+
+.subject-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 20px;
+    gap: 10px;
+}
 
 
         /* MENU */
@@ -630,6 +648,28 @@
 
     </div>
 
+<!-- EXAM MENU -->
+
+
+<div class="menu exam-menu">
+
+    <button onclick="showSSC()">
+        SSC
+    </button>
+
+    <button onclick="showComingSoon('WBP')">
+        WBP
+    </button>
+
+    <button onclick="showComingSoon('SBI-PO')">
+        SBI-PO
+    </button>
+
+    <button onclick="showComingSoon('RBI')">
+        RBI
+    </button>
+
+</div>
 
     <!-- MAIN CONTENT -->
 
@@ -736,11 +776,213 @@
 
     </audio>
 
-<button onclick="document.getElementById('bgMusic').play()">▶ Play Music</button>
 
     <!-- JAVASCRIPT -->
 
     <script>
+
+function showGK() {
+
+    document.getElementById("content").innerHTML = `
+
+        <h2>GK</h2>
+
+        <div class="about-box">
+
+            <h2>GK PDF</h2>
+
+            <p>SSC CHSL GK Study Material</p>
+
+            <h3>₹10</h3>
+
+            <button onclick="showPayment()">
+                PAY ₹10
+            </button>
+
+        </div>
+
+        <br>
+
+        <button onclick="showCHSL()">
+            ← BACK
+        </button>
+
+    `;
+}
+
+
+function showPayment() {
+
+    document.getElementById("content").innerHTML = `
+
+        <h2>PAYMENT</h2>
+
+        <div class="about-box">
+
+            <h2>GK PDF</h2>
+
+            <p>Price: ₹10</p>
+
+            <p>Scan the QR code with any UPI app and pay ₹10.</p>
+
+            <img src="gk_upi_qr.png" alt="UPI QR Code" style="width:280px;max-width:90%;display:block;margin:20px auto;border-radius:10px;background:white;padding:8px;">
+
+            <p><b>UPI ID:</b> 6297594079-1@naviaxis</p>
+
+            <button onclick="startPayment()">
+                💳 PAY ₹10
+            </button>
+
+            <br><br>
+
+            <button onclick="openGKPDF()">
+                📄 I HAVE PAID - OPEN PDF
+            </button>
+
+            <p style="color:#ff6666;font-size:14px;margin-top:20px;">
+                Payment verification is manual in this version.
+            </p>
+
+        </div>
+
+        <br>
+
+        <button onclick="showGK()">
+            ← BACK
+        </button>
+
+    `;
+}
+
+
+function startPayment() {
+
+    const upiId = "6297594079-1@naviaxis";
+
+    const upiUrl =
+        "upi://pay?pa=" + encodeURIComponent(upiId) +
+        "&pn=" + encodeURIComponent("BAPI SARKAR") +
+        "&am=10&cu=INR" +
+        "&tn=" + encodeURIComponent("SSC CHSL GK PDF");
+
+    window.location.href = upiUrl;
+}
+
+
+function openGKPDF() {
+
+    window.open("gk.pdf", "_blank");
+
+}
+
+
+function showSSC() {
+
+    document.getElementById("content").innerHTML = `
+
+        <h2>SSC</h2>
+
+        <div class="menu exam-sub-menu">
+
+            <button onclick="showComingSoon('SSC CGL')">
+                CGL
+            </button>
+
+            <button onclick="showCHSL()">
+                CHSL
+            </button>
+
+            <button onclick="showComingSoon('SSC CPO')">
+                CPO
+            </button>
+
+            <button onclick="showComingSoon('SSC MTS')">
+                MTS
+            </button>
+
+            <button onclick="showComingSoon('SSC GD')">
+                GD
+            </button>
+
+        </div>
+
+        <br>
+
+        <button onclick="showHome()">
+            ← BACK
+        </button>
+
+    `;
+}
+
+
+function showCHSL() {
+
+    document.getElementById("content").innerHTML = `
+
+        <h2>CHSL</h2>
+
+        <h2>SUBJECT</h2>
+
+        <div class="subject-menu">
+
+            <button onclick="showComingSoon('English')">
+                English
+            </button>
+
+            <button onclick="showComingSoon('Math')">
+                Math
+            </button>
+
+            <button onclick="showGK()">
+                GK
+            </button>
+
+            <button onclick="showComingSoon('Reasoning')">
+                Reasoning
+            </button>
+
+            <button onclick="showComingSoon('Computer')">
+                Computer
+            </button>
+
+        </div>
+
+        <br>
+
+        <button onclick="showSSC()">
+            ← BACK
+        </button>
+
+    `;
+}
+
+
+function showComingSoon(subjectName) {
+
+    document.getElementById("content").innerHTML = `
+
+        <h2>${subjectName}</h2>
+
+        <div class="about-box">
+
+            <h2>🚧 COMING SOON 🚧</h2>
+
+            <p>
+                This section is currently under development.
+            </p>
+
+        </div>
+
+        <br>
+
+        <button onclick="showCHSL()">
+            ← BACK
+        </button>
+
+    `;
+
+}
 
 
         /* HOME */
